@@ -1,0 +1,14 @@
+{
+  "name": "hole_punching",
+  "version": "1.0.0",
+  "description": "Hole Punching Server Between Vuga USDD Server and Vuga App Server",
+  "main": "hp_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Nixi",
+  "license": "ISC",
+  "dependencies": {
+    "shortid": "^2.2.2"
+  }
+}
