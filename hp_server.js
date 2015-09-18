@@ -68,6 +68,7 @@ net.createServer(function(socket){
 				amount: json_data.amount,
 				shortid: id,
 			};
+			console.log("Forewarding "+json_data.phone + " amount " + json_data.amount + " to " providerByNumber(json_data.phone) + " server.");
 			ss[providerByNumber(json_data.phone)].write( JSON.stringify(foreward_req) );
 			clients[id] = socket;
 		}
