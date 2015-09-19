@@ -6,11 +6,11 @@ var ORIGIN_CLIENT = "this_is_vuga_client";
 
 var json_for_hp = {
 	origin: ORIGIN_CLIENT,
-	phone: "40",
+	phone: "2507222",
 	amount: "1",
 };
 
-client.connect(HP_PORT, HP_HOST, function(){
+client.connect(HP_PORT, "localhost", function(){
 
 	client.write( JSON.stringify(json_for_hp) );
 
