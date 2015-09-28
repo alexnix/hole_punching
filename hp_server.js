@@ -11,8 +11,6 @@ var clients = {};
 var ORIGIN_SERVER_CONNECTION = "this_is_ussd_server_connecting", ORIGIN_SERVER_RESPONSE = "this_is_ussd_server_respons", ORIGIN_CLIENT = "this_is_vuga_client",
 	USSD_MTN = "ussd_mtn", USSD_TG = "ussd_tg", USSD_AIR = "ussd_air";
 
-var HEART_BEAT = "beep";
-
 if (typeof String.prototype.startsWith != 'function') {
   String.prototype.startsWith = function (str){
     return this.indexOf(str) === 0;
@@ -55,13 +53,6 @@ net.createServer(function(socket){
 		if( json_data.origin ==  ORIGIN_SERVER_CONNECTION ) {
 			console.log(whichServer(json_data.provider));
 			ss[whichServer(json_data.provider)] = socket;
-
-			setInterval(function(){
-				socket.write(JSON.stringify({
-					beep: HEART_BEAT,
-				}));
-			}, 5 * 60 * 1000) // once 5 minutes
-
 		}
 
 		if( json_data.origin == ORIGIN_SERVER_RESPONSE ){
